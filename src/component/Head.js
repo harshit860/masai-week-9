@@ -5,6 +5,7 @@ import Order from './Order'
 import Restraunts from './Restraunts'
 import Final from './Final'
 import Addres from './Addres'
+import Contactus from './Contactus'
 
 class Head extends React.Component{
         constructor(props) { 
@@ -53,7 +54,10 @@ class Head extends React.Component{
                     <Route path="/Orders" exact render={()=><Final />}/>
                 </div>
                 <div>
-        <Route path="/Add" exact render={()=><Addres />}/>
+                    <Route path="/Contact" exact render={()=><Contactus />}/>
+                </div>
+                <div>
+                        <Route path="/Add" exact render={()=><Addres />}/>
                 </div>
             </div>
             </Router>

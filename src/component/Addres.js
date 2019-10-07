@@ -55,14 +55,14 @@ class Addres extends React.Component{
                                 <label>Enter Restraunt image url</label>
                                 <input onChange={(ev)=>this.handleChange(ev)} name={"url"}className="ml-3"></input>
                             </div>
-                            <div className="col-xl-12">
+                            {/* <div className="col-xl-12">
                                 <label>Enter Restraunt dish</label>
                                 <input onChange={(ev)=>this.handleChange(ev)} name={"dish"}className="ml-3"></input>
                             </div>
                             <div className="col-xl-12">
                                 <label>Enter Restraunt dishes Cost</label>
                                 <input onChange={(ev)=>this.handleChange(ev)} name={"dishcost"}className="ml-3"></input>
-                            </div>
+                            </div> */}
                             <input className="btn btn-danger ml-2" type={"submit"} value={"feed"}></input>
                            
                        </form>

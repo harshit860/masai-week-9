@@ -5,14 +5,17 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 
 const Restraunts = (props)=>{
    let b= props.res_name.map((a,index)=>{
-        return <Link to="/Order"><div className="col-xl-4 ml-5 mt-5 text-left" onClick={()=>props.check(index)}>
+        return <Link to="/Order"><div className="col-xl-5 ml-4 mt-5 text-left" onClick={()=>props.check(index)}>
                 <img style={{width:"400px"}} src={a.url}></img>
-                  <h3 className="text-left text-primary">{a.restraunt_name}</h3>
+                
+                <h3 className="text-left text-primary">{a.restraunt_name}</h3>
+                  <h2>{"Rating: "+a.rating}</h2>
+               
             </div>
             </Link>
        })
 return(
-<div className="row border">
+<div className="row border ">
         {b}
 </div>
 )
