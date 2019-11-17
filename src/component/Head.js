@@ -6,7 +6,7 @@ import Restraunts from './Restraunts'
 import Final from './Final'
 import Addres from './Addres'
 import Contactus from './Contactus'
-
+import History from './History'
 class Head extends React.Component{
         constructor(props) { 
                 super(props)
@@ -31,7 +31,7 @@ class Head extends React.Component{
                         </div>
                         <div className="col-xl-2">
 
-                            <Link to="/Top"><button className="border border-white btn  text-primary"><h4>Top sellars</h4></button></Link>
+                            <Link to="/Top"><button className="border border-white btn  text-primary"><h4>Order_history</h4></button></Link>
                         </div>
                      
                         <div className="col-xl-2">
@@ -43,6 +43,12 @@ class Head extends React.Component{
                         <div className="col-xl-1">
                             <Link to="/Orders"><button className="border border-white btn  text-primary"><h2>Final Order</h2></button></Link>
                         </div> 
+                        {this.props.cart ? (
+                                    <div className="col-xl-1">
+                                    <button className="border border-white btn  text-danger"><h4>Items in Cart: {this.props.totalorder}</h4></button>
+                                </div> 
+                        ):('') }
+                        
                 </div>
                 <div className="row">
                        <Route path="/" exact render={()=><Restraunts />} />
@@ -59,6 +65,9 @@ class Head extends React.Component{
                 <div>
                         <Route path="/Add" exact render={()=><Addres />}/>
                 </div>
+                <div>
+                <Route path="/Top" exact render={()=><History />}/>
+                </div>
             </div>
             </Router>
         )
@@ -69,7 +78,10 @@ const mapStateToProps = (state) =>{
     return{
             
             heading:state.heading,
-            res_name:state.Restraunts
+            res_name:state.Restraunts,
+            totalorder:state.order.length,
+            cart:state.cartshow
+            
     }
 }
 
